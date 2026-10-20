@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shampoo For Hair</title>
+    <link rel="stylesheet" href="06-Homepage.css">
+</head>
+<body>
+
+<!-- 1. 최상단 네비게이션 바 -->
+<header class="header">
+    <nav class="nav">
+        <a href="#" class="nav-item">New Arrival</a>
+        <a href="#" class="nav-item">Best Sellers</a>
+        <a href="#" class="nav-item">Hand Soap</a>
+        <a href="#" class="nav-item logo">Free Market</a>
+        <a href="#" class="nav-item">Shampoo</a>
+        <a href="#" class="nav-item">Body Lotion</a>
+        <a href="#" class="nav-item">Brush</a>
+
+
+    </nav>
+</header>
+
+<!-- 2. 브레드크럼 (경로 표시) -->
+<div class="breadcrumb">
+    <span>Home</span> / <span>Catalog</span> / <span>Shop</span> / <strong class="current">Shampoo</strong>
+</div>
+
+<!-- 3. 메인 상품 정보 영역 (좌/우 2열 구조) -->
+<main class="product-container">
+
+    <!-- 왼쪽: 이미지 영역 -->
+    <div class="product-image-container">
+        <img src="https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?q=80&w=800&auto=format&fit=crop" alt="Water Drops" class="product-image">
+    </div>
+
+    <!-- 오른쪽: 상품 상세 정보 영역 -->
+    <div class="product-info-container">
+
+        <!-- 오른쪽 상단: 상품명, 수량, 가격 -->
+        <div class="info-top">
+            <span class="category-tag">HAND SOAP</span>
+            <h1 class="product-title">Shampoo For Hair</h1>
+
+            <div class="purchase-row">
+                <div class="quantity-picker">
+                    <button class="qty-btn">-</button>
+                    <span class="qty-number">1</span>
+                    <button class="qty-btn">+</button>
+                </div>
+                <div class="price">$59.99</div>
+            </div>
+        </div>
+
+        <!-- 오른쪽 하단: 설명(좌) + 아코디언 메뉴(우) -->
+        <div class="info-bottom">
+            <div class="description">
+                <p>
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                    when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                    It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+                    It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
+                    and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                </p>
+            </div>
+
+            <div class="accordion-menu">
+                <div class="accordion-item">
+                    <span>How to use</span>
+                    <span class="plus-icon">+</span>
+                </div>
+                <div class="accordion-item">
+                    <span>Ingredients</span>
+                    <span class="plus-icon">+</span>
+                </div>
+                <div class="accordion-item">
+                    <span>Shipping</span>
+                    <span class="plus-icon">+</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</main>
+
+<!-- 4. 자바스크립트 (버튼 클릭 동작) -->
+<script>
+    // 수량 변경 기능 (+, -)
+    const minusBtn = document.querySelector('.quantity-picker .qty-btn:first-child');
+    const plusBtn = document.querySelector('.quantity-picker .qty-btn:last-child');
+    const qtyNumber = document.querySelector('.qty-number');
+
+    let count = 1;
+
+    plusBtn.addEventListener('click', () => {
+        count++;
+        qtyNumber.textContent = count;
+    });
+
+    minusBtn.addEventListener('click', () => {
+        if (count > 1) {
+            count--;
+            qtyNumber.textContent = count;
+        }
+    });
+
+    // 아코디언 메뉴 (+, - 토글)
+    const accordionItems = document.querySelectorAll('.accordion-item');
+
+    accordionItems.forEach(item => {
+        item.addEventListener('click', () => {
+            const icon = item.querySelector('.plus-icon');
+            if (icon.textContent === '+') {
+                icon.textContent = '-';
+            } else {
+                icon.textContent = '+';
+            }
+        });
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+.box {
+    width: 260px;
+    height: 160px;
+    margin: 8px;
+    display: inline-block;
+    border: 1px solid #cbd5e1;
+    background-color: antiquewhite;
+    background-image: url ( "");
+}
+
+.repjeat {
+     background-size: 60px;
+}
+
+.shorthand {
+    background: #fff7ed url("images/room.png") no - repeat right bottom / 80px;
+
+}
+
+.gradient {
+    background: linear-gradient(to right , rgb (14,44,205) rgb );
+}

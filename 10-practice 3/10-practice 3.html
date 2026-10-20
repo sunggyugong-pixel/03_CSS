@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SNKRS - Shoe Showcase</title>
+    <!-- CSS 파일 연결 -->
+    <link rel="stylesheet" href="10-practice 3.css">
+</head>
+<body>
+
+<div class="card-container">
+    <!-- 왼쪽 정보 영역 -->
+    <div class="info-section">
+        <nav class="nav-bar">
+            <div class="brand">SNKRS.</div>
+            <div class="menu">
+                <a href="#">Men</a>
+                <a href="#" class="active">Women</a>
+                <a href="#">Kids</a>
+            </div>
+        </nav>
+
+        <div class="tag">LIMITED EDITION</div>
+
+        <h1 class="shoe-title" id="shoeTitle">AIR MAX<br><span class="highlight" id="shoeSubtitle">PULSE</span></h1>
+
+        <p class="description">Pushing the limits of what's possible with iconic Air cushioning.</p>
+
+        <div class="size-section">
+            <label>Select Size (US)</label>
+            <div class="size-options">
+                <button class="size-btn">7</button>
+                <button class="size-btn">8</button>
+                <button class="size-btn active">9</button>
+                <button class="size-btn">10</button>
+                <button class="size-btn">11</button>
+            </div>
+        </div>
+
+        <div class="action-section">
+            <div class="price" id="shoePrice">$ 185.00</div>
+            <button class="add-btn">ADD TO BAG &rarr;</button>
+        </div>
+    </div>
+
+    <!-- 오른쪽 이미지 및 각도 조절 박스 영역 -->
+    <div class="image-section" id="imageSection">
+        <!-- 배경 기울어진 흰색 박스 -->
+        <div class="white-box">
+            <!-- 신발 이미지 (투명 누끼 완료된 안전한 이미지 링크) -->
+            <img src="https://static.nike.com/a/images/t_prod_ss/w_960,c_limit,f_auto/f104dcb5-5819-472d-80ea-38f36c53d161/air-jordan-1-low-og-barons-cz0790-104-release-date.jpg" alt="Shoe" class="shoe-image" id="shoeImg">
+        </div>
+
+        <!-- 하단 스펙 라벨 (270도 고정) -->
+        <div class="spec-footer">
+            <div class="spec-item">
+                <span class="spec-value highlight">270도</span>
+                <span class="spec-label">AIR UNIT</span>
+            </div>
+            <div class="spec-item">
+                <span class="spec-value highlight">12oz</span>
+                <span class="spec-label">LIGHTWEIGHT</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 자바스크립트 영역 -->
+<script>
+    // 배경 파란 박스가 없는 깔끔한 투명 누끼 신발 데이터 배열
+    const shoes = [
+        {
+            title: 'AIR MAX',
+            subtitle: 'PULSE',
+            price: '$ 185.00',
+            img: 'https://static.nike.com/a/images/t_prod_ss/w_960,c_limit,f_auto/f104dcb5-5819-472d-80ea-38f36c53d161/air-jordan-1-low-og-barons-cz0790-104-release-date.jpg'
+        },
+        {
+            title: 'AIR FORCE 1',
+            subtitle: "'07 RETRO",
+            price: '$ 135.00',
+            img: 'https://static.nike.com/a/images/t_prod_ss/w_960,c_limit,f_auto/795107cd-527e-40d6-8be5-6136d8fbfd0f/air-force-1-07-lv8-fb8878-111-release-date.jpg'
+        },
+        {
+            title: 'AIR JORDAN 1',
+            subtitle: 'MID RED',
+            price: '$ 160.00',
+            img: 'https://static.nike.com/a/images/t_prod_ss/w_960,c_limit,f_auto/b533e4f6-8bb0-4767-8854-1b702ec9a55e/air-jordan-1-mid-white-court-purple-black-release-date.jpg'
+        }
+    ];
+
+    let currentIndex = 0;
+
+    const imageSection = document.getElementById('imageSection');
+    const shoeImg = document.getElementById('shoeImg');
+    const shoeTitle = document.getElementById('shoeTitle');
+    const shoePrice = document.getElementById('shoePrice');
+
+    // 오른쪽 영역 클릭 시 신발 및 정보 변경
+    imageSection.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % shoes.length;
+        const currentShoe = shoes[currentIndex];
+
+        shoeImg.src = currentShoe.img;
+        shoeTitle.innerHTML = `${currentShoe.title}<br><span class="highlight" id="shoeSubtitle">${currentShoe.subtitle}</span>`;
+        shoePrice.textContent = currentShoe.price;
+    });
+
+    // 사이즈 버튼 인터랙션
+    document.querySelectorAll('.size-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            document.querySelectorAll('.size-btn').forEach(b => b.classList.remove('active'));
+            e.target.classList.add('active');
+        });
+    });
+</script>
+</body>
+</html>

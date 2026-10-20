@@ -1,0 +1,291 @@
+/* 1번째 줄: 기본 초기화 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: #6b21a8; /* 전체 보라색 배경 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* 16번째 줄: 메인 검은색 프레임 (좌우 2단 대칭형 비율 고정) */
+.main-container {
+    background-color: black;
+    border-radius: 28px;
+    padding: 24px;
+    width: 900px;
+    max-width: 100%;
+    display: flex;
+    gap: 16px;
+}
+
+/* 28번째 줄: 공통 카드 테두리 및 정렬 */
+.card {
+    border-radius: 18px;
+    overflow: hidden;
+    position: relative;
+}
+
+/* ====================================
+   35번째 줄: [좌측 영역]
+   ==================================== */
+.left-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* 44번째 줄: Flex! 메인 큰 흰색 카드 */
+.flex-card {
+    background-color: #ffffff;
+    flex: 1;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 340px;
+}
+
+.badge-group {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.badge {
+    padding: 4px 8px;
+    border-radius: 10px;
+    font-size: 9px;
+}
+
+.yellow-badge {
+    background-color: #ccff00;
+    color: #000000;
+}
+
+.card-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.main-title {
+    font-size: 60px;
+    font-weight: 900;
+    letter-spacing: -1.5px;
+}
+
+.divider {
+    width: 100%;
+    height: 1px;
+    background-color: #000000;
+    margin-bottom: 12px;
+}
+
+.description {
+    font-size: 12px;
+    color: #222222;
+    line-height: 1.4;
+    font-weight: 600;
+}
+
+/* 108번째 줄: 좌측 하단 사진 2개 가로 배치 및 비율 유지 */
+.left-bottom-group {
+    display: flex;
+    gap: 16px;
+    height: 135px;
+}
+
+.img-card {
+    flex: 1;
+}
+
+.img-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 사진이 찌그러지지 않고 박스에 예쁘게 꽉 차도록 설정 */
+}
+
+
+/* ====================================
+   125번째 줄: [우측 영역 - 5개 박스 구성]
+   ==================================== */
+.right-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* 134번째 줄: [상단] 박스 1 (물결 그라데이션) + 박스 2 (다크 메뉴) */
+.right-top-row {
+    display: flex;
+    gap: 16px;
+    height: 165px;
+}
+
+/* 141번째 줄: 박스 1 (그라데이션 물결) */
+.box1-gradient {
+    width: 160px;
+    height: 100%;
+    background:
+            radial-gradient(circle at 20% 20%, #e879f9 0%, transparent 50%),
+            radial-gradient(circle at 80% 80%, #38bdf8 0%, transparent 50%),
+            linear-gradient(135deg, #a855f7 0%, #6366f1 50%, #06b6d4 100%);
+    flex-shrink: 0;
+}
+
+/* 153번째 줄: 박스 2 (다크 메뉴) */
+.box2-dark-menu {
+    flex: 1;
+    background-color: #1c1c1e;
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: #ffffff;
+}
+
+.menu-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 10px;
+    font-weight: 800;
+    color: #d4d4d8;
+    letter-spacing: 0.5px;
+}
+
+.hire-us {
+    font-size: 11px;
+    font-weight: bold;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+/* 182번째 줄: [중단] 박스 3 (버튼) + 박스 4 (03.jpg 이미지 배치) */
+.right-mid-row {
+    display: flex;
+    gap: 16px;
+    height: 115px;
+    align-items: center;
+}
+
+.box3-action {
+    width: 160px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex-shrink: 0;
+}
+
+.btn {
+    width: 100%;
+    padding: 8px 4px;
+    border-radius: 10px;
+    border: none;
+    font-size: 9px;
+    font-weight: 800;
+    cursor: pointer;
+    text-align: center;
+}
+/* 기존 버튼 공통 스타일 */
+.btn {
+    width: 100%;
+    padding: 8px 4px;
+    border-radius: 10px;
+    border: none;
+    font-size: 9px;
+    font-weight: 800;
+    cursor: pointer; /* 마우스를 올렸을 때 손가락 모양으로 변경 */
+    text-align: center;
+    transition: background-color 0.2s ease; /* 색상이 부드럽게 바뀌도록 전환 효과 추가 */
+}
+
+/* 💡 새로 추가할 부분: 마우스를 올렸을 때(:hover) 파란색으로 변경 */
+.btn:hover {
+    background-color: #3b82f6 !important; /* 선명한 파란색 */
+    color: #ffffff !important;           /* 글자색은 흰색으로 변경 */
+}
+
+.btn-yellow {
+    background-color: #ffcc00;
+    color: #000000;
+}
+
+.btn-white-rotated {
+    background-color: #ffffff;
+    color: #000000;
+    transform: rotate(-3deg);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    margin-top: -6px;
+}
+
+
+
+.btn-yellow {
+    background-color: #ffcc00;
+    color: #000000;
+}
+
+.btn-white-rotated {
+    background-color: #ffffff;
+    color: #000000;
+    transform: rotate(-3deg);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    margin-top: -6px;
+}
+
+.more-cases {
+    color: #ffffff;
+    font-size: 9px;
+    font-weight: bold;
+    margin-top: 6px;
+    letter-spacing: 0.3px;
+}
+
+.box4-tech-img {
+    flex: 1;
+    height: 100%;
+}
+
+.box4-tech-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 우측 3번 사진 비율 유지 꽉 채우기 */
+}
+
+/* 238번째 줄: [하단] 박스 5 (하단 흰색 텍스트 카드) */
+.box5-text-card {
+    background-color: #ffffff;
+    flex: 1;
+    /* padding: 20px; <-- 이 줄을 지우거나 주석 처리(//) 하세요 */
+    display: flex;
+    overflow: hidden; /* 동영상이 박스 밖으로 튀어나가지 않게 깔끔하게 잘라줌 */
+    min-height: 150px;
+}
+
+.card-text {
+    font-size: 10px;
+    color: #444444;
+    line-height: 1.4;
+}
+/* 하단 박스 안의 동영상 비율 및 크기 맞춤 */
+.box5-text-card video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

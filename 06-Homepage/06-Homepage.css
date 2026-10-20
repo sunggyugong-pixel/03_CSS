@@ -1,0 +1,189 @@
+/* 기본 초기화 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+}
+
+body {
+    color: #111;
+    background-color: #fff;
+}
+
+/* 1. 상단 네비게이션 바 */
+.header {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-item {
+    text-decoration: none;
+    color: #333;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 18px 0;
+    border-right: 1px solid #4f5151;
+    flex: 1;
+    text-align: center;
+}
+
+.nav-item:last-child {
+    border-right: none;
+}
+
+.nav-item.logo {
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color:red;
+}
+
+/* 2. 브레드크럼 */
+.breadcrumb {
+    padding: 25px 40px;
+    font-size: 13px;
+    color: #888;
+}
+
+.breadcrumb span {
+    color: #888;
+}
+
+.breadcrumb .current {
+    color: #000;
+    font-weight: 700;
+}
+
+/* 3. 메인 상품 영역 (좌우 2열 배치) */
+.product-container {
+    display: flex;
+    width: 100%;
+    padding: 0 40px 60px 40px;
+    gap: 50px;
+}
+
+/* 왼쪽: 이미지 영역 */
+.product-image-container {
+    flex: 1;
+    width: 50%;
+}
+
+.product-image {
+    width: 100%;
+    height: 550px;
+    object-fit: cover;
+    display: block;
+}
+
+/* 오른쪽: 상품 정보 영역 (위/아래 구획) */
+.product-info-container {
+    flex: 1;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* 오른쪽 상단 */
+.info-top {
+    padding-top: 10px;
+}
+
+.category-tag {
+    font-size: 11px;
+    color: #888;
+    letter-spacing: 1px;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.product-title {
+    font-size: 40px;
+    font-weight: 800;
+    margin-bottom: 35px;
+    color: darkgoldenrod;
+}
+
+.purchase-row {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.quantity-picker {
+    display: flex;
+    align-items: center;
+    border: 1px solid #e5e5e5;
+    border-radius: 20px;
+    padding: 6px 18px;
+    gap: 15px;
+}
+
+.qty-btn {
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    color: #666;
+}
+
+.qty-number {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.price {
+    font-size: 26px;
+    font-weight: 700;
+    color: #2f6df6;
+}
+
+/* 오른쪽 하단 (설명 + 아코디언 좌우 나란히) */
+.info-bottom {
+    display: flex;
+    gap: 40px;
+    border-top: 1px solid #e5e5e5;
+    padding-top: 30px;
+}
+
+.description {
+    flex: 1.2;
+    font-size: 11px;
+    line-height: 1.6;
+    color: #444;
+}
+
+.accordion-menu {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.accordion-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 12px;
+    font-weight: 700;
+    color: green;
+    cursor: pointer;
+}
+
+.accordion-item:first-child {
+    border-top: 1px solid #eee;
+}
+
+.plus-icon {
+    font-size: 14px;
+    color: #666;
+    font-weight: 400;
+}

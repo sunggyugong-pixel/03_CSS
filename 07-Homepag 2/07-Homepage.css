@@ -1,0 +1,205 @@
+{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #f0f2f5; /* 수정됨: fo -> f0 숫자로 변경 */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    padding: 30px;
+}
+
+.dashboard-container {
+    display: flex;
+    gap: 20px;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+/* 카드 공통 스타일 */
+.card {
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+/* 왼쪽 영역 레이아웃 (2열 그리드) */
+.left-section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    flex: 1.2;
+}
+
+.card-small {
+    height: 140px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.disk-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+.disk-icon {
+    width: 60px;
+    height: 60px;
+    background-color: #1a1f2c;
+    border-radius: 50%;
+    position: relative;
+}
+
+/* 도넛 차트 가운데 구멍 느낌 */
+.disk-icon::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 18px;
+    height: 18px;
+    background-color: #ffffff;
+    border-radius: 50%;
+}
+
+.disk-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.capacity {
+    font-weight: bold;
+    font-size: 15px;
+    color: #333;
+}
+
+.dots {
+    display: flex;
+    gap: 4px; /* 점 사이 간격 */
+    align-items: center;
+}
+
+.dot {
+    width: 4px;
+    height: 4px;
+    background-color: #cbd5e1; /* 나머지 그레이 점 색상 */
+    border-radius: 50%;
+}
+
+.dot.active {
+    background-color: #1a1f2c; /* 첫 번째 블랙 점 색상 */
+}
+
+/* 통계 카드 */
+.card-stats {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 180px;
+}
+
+.stat-label {
+    font-size: 12px;
+    color: #666;
+    display: block;
+    margin-bottom: 6px;
+}
+
+.stat-value {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.stat-value.used {
+    color: #1a1f2c;
+}
+
+.stat-value.available {
+    color: #2563eb;
+}
+
+/* 버튼 카드 */
+.card-buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 180px;
+}
+
+.btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 13px;
+    color: #334155;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    text-align: center;
+}
+
+.btn:hover {
+    background-color: #dcfce7; /* 부드러운 연한 초록색 */
+    border-color: #bbf7d0;   /* 테두리도 옅은 초록빛 */
+} /* <--- 여기에 닫는 괄호가 빠져 있어서 아래 코드가 전부 에러가 났던 것입니다! */
+
+/* 오른쪽 영역 레이아웃 */
+.right-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex: 1; /* 1.5로 되어 있는 것을 1로 변경하여 좌우 폭 비율을 맞춰줍니다 */
+    justify-content: flex-start; /* 위쪽부터 차곡차곡 쌓이도록 정렬합니다 */
+}
+.card-wide {
+    height: 108px; /* 기존 140px에서 105px 정도로 줄여서 좌우 전체 높이를 맞춥니다 */
+    min-height: 108px;
+    max-height: 108px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+}
+
+.system-title {
+    font-weight: 600;
+    font-size: 15px;
+    color: #1e293b;
+}
+
+.system-value {
+    font-weight: bold;
+    font-size: 15px;
+    color: #1e293b;
+}
+
+/* 오른쪽 카드 배경 색상 */
+.bg-blue {
+    background-color: #e2e8f0;
+}
+
+.bg-yellow {
+    background-color: #fef08a;
+}
+
+.bg-pink {
+    background-color: #fecdd3;
+}
+
+.bg-white {
+    background-color: #ffffff;
+}
+.bg-green {
+    background-color: #dcfce7; /* 부드러운 연한 초록색 */
+}

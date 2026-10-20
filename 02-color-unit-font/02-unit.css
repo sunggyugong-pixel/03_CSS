@@ -1,0 +1,14 @@
+.bar{
+    color:white;
+    margin: 6px 0;
+    padding:4px 8px;
+}
+
+.parent-wide {width: 500px; border:2px dashed #94a3b8; }
+.px { width: 200px; }
+.percent {width: 50% }
+.parent-narrow { background: cyan ; width : 300px;}
+
+html { font-size: 16px;}
+.box { font-size: 20px;}
+.em { font-size:1.5em;}
